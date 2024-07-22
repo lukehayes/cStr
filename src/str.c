@@ -13,8 +13,6 @@ Str* ldh_StrCreate(const char* s)
     strncpy(strObject->text, s, strlen(s));
     strObject->text[strlen(s) + 1] = '\0';
 
-    printf("Current Str Length %lu\n", strlen(s));
-
     strObject->length = strlen(s);
 
     return strObject;
@@ -27,4 +25,20 @@ void ldh_StrDestroy(Str* s)
 
     s->text = NULL;
     s = NULL;
+}
+
+void ldh_StrRev(Str* s)
+{
+    size_t j = s->length - 1;
+
+    for(int i = 0; i <= s->length/2 ; i++)
+    {
+        char tStart = s->text[i];
+        char tEnd   = s->text[j];
+
+        s->text[j] = tStart;
+        s->text[i] = tEnd;
+
+        j--;
+    }
 }

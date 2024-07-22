@@ -10,7 +10,7 @@ typedef struct Str
 } Str;
 
 /**
-* Create a new string object.
+* Create a new Str object.
 *
 * @param const char* s    The text for the Str object;
 *
@@ -19,11 +19,20 @@ typedef struct Str
 Str* ldh_StrCreate(const char* s);
 
 /**
-* Destry a string object.
+* Destroy a Str object.
 *
 * @param Str*    The Str object to be destroyed.
 */
 void ldh_StrDestroy(Str* s);
+
+/**
+* Reverse a the string contents of a Str object.
+*
+* @param Str*    The Str object to be destroyed.
+*/
+void ldh_StrRev(Str* s);
+
+
 
 
 #endif // LDH_STR_H
