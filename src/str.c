@@ -29,6 +29,8 @@ void ldh_StrDestroy(Str* s)
 
 void ldh_StrRev(Str* s)
 {
+    if(s == NULL) return;
+
     size_t j = s->length - 1;
 
     for(int i = 0; i <= s->length/2 ; i++)
