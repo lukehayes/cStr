@@ -44,3 +44,7 @@ void ldh_StrRev(Str* s)
         j--;
     }
 }
+void ldh_StrPrint(Str* s)
+{
+    printf("Str: \"%s\" Size: %lu\n", s->text, s->length);
+}

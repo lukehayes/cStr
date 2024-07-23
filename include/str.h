@@ -32,6 +32,12 @@ void ldh_StrDestroy(Str* s);
 */
 void ldh_StrRev(Str* s);
 
+/**
+* Print a Str object to std out.
+*
+* @param Str*    The Str object to be destroyed.
+*/
+void ldh_StrPrint(Str* s);
 
 
 
