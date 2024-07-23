@@ -9,9 +9,9 @@ Str* ldh_StrCreate(const char* s)
 {
     Str* strObject    = malloc(sizeof(Str));
 
-    strObject->text   = malloc(sizeof(char) * strlen(s) + 1);
+    strObject->text   = calloc(strlen(s), sizeof(char));
     strncpy(strObject->text, s, strlen(s));
-    strObject->text[strlen(s) + 1] = '\0';
+    /*strObject->text[strlen(s) + 1] = '\0';*/
 
     strObject->length = strlen(s);
 
