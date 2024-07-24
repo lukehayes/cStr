@@ -9,11 +9,14 @@ Str* ldh_StrCreate(const char* s)
 {
     Str* strObject    = malloc(sizeof(Str));
 
-    strObject->text   = calloc(strlen(s), sizeof(char));
-    strncpy(strObject->text, s, strlen(s));
-    /*strObject->text[strlen(s) + 1] = '\0';*/
+    const size_t bufferSize = strlen(s) + 1;
 
-    strObject->length = strlen(s);
+    strObject->text   = malloc(sizeof(char) * bufferSize);
+
+    strncpy(strObject->text, s, bufferSize);
+    strObject->text[bufferSize] = '\0';
+
+    strObject->length = bufferSize - 1;
 
     return strObject;
 }
