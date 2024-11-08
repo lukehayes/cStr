@@ -1,13 +1,7 @@
-#ifndef LDH_STR_H
-#define LDH_STR_H
+#ifndef C_STR_H
+#define C_STR_H
 
-#include <string.h>
-
-typedef struct Str
-{
-    char* text;
-    size_t length;
-} Str;
+typedef struct Str Str;
 
 /**
 * Create a new Str object.
@@ -16,32 +10,32 @@ typedef struct Str
 *
 * @return Str*    A new Str object.
 */
-Str* ldh_StrCreate(const char* s);
+Str* StrCreate(const char* s);
 
 /**
 * Destroy a Str object.
 *
 * @param Str*    The Str object to be destroyed.
 */
-void ldh_StrDestroy(Str* s);
+void StrDestroy(Str* s);
 
 /**
 * Reverse a the string contents of a Str object.
 *
 * @param Str*    The Str object to be destroyed.
 */
-void ldh_StrRev(Str* s);
+void StrRev(Str* s);
 
 /**
 * Print a Str object to std out.
 *
 * @param Str*    The Str object to be destroyed.
 */
-void ldh_StrPrint(Str* s);
+void StrPrint(Str* s);
 
 
 
-#endif // LDH_STR_H
+#endif // C_STR_H
 
 
 

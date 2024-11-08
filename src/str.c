@@ -4,8 +4,15 @@
 #include <stdio.h>
 #include <string.h>
 
+typedef struct Str
+{
+    char* text;
+    size_t length;
+} Str;
 
-Str* ldh_StrCreate(const char* s)
+
+
+Str* StrCreate(const char* s)
 {
     Str* strObject    = malloc(sizeof(Str));
 
@@ -21,7 +28,7 @@ Str* ldh_StrCreate(const char* s)
     return strObject;
 }
 
-void ldh_StrDestroy(Str* s)
+void StrDestroy(Str* s)
 {
     free(s->text);
     free(s);
@@ -30,7 +37,7 @@ void ldh_StrDestroy(Str* s)
     s = NULL;
 }
 
-void ldh_StrRev(Str* s)
+void StrRev(Str* s)
 {
     if(s == NULL) return;
 
@@ -61,7 +68,7 @@ void ldh_StrRev(Str* s)
     }
 }
 
-void ldh_StrPrint(Str* s)
+void StrPrint(Str* s)
 {
     printf("Str: \"%s\" Size: %lu\n", s->text, s->length);
 }
