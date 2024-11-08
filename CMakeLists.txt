@@ -7,7 +7,7 @@ project(cStr)
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(INCLUDE_DIRS "include")
-set(BIN_NAME "cStrt")
+set(BIN_NAME "cStr")
 set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 set(CMAKE_C_FLAGS  "-Wall -fno-strict-aliasing")
 
@@ -28,9 +28,9 @@ add_executable(${BIN_NAME} main.c "${PROJECT_SOURCE_DIR}/src/str.c")
 # -----------------------------------------------------------------------------
 # Build the Toml Parser Library
 #
-set(cStrLib "cStr")
+set(cStrLib "CStr")
 
-add_library(${cStrLib} STATIC
+add_library(${cStrLib} SHARED
   "${SRC_DIR}/str.c"
 )
 
@@ -40,3 +40,4 @@ add_library(${cStrLib} STATIC
 #
 #target_link_libraries(${BIN_NAME} ${CIO_LIB})
 
+target_link_libraries(${BIN_NAME} ${cStrLib})
